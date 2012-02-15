@@ -1,4 +1,51 @@
 GIT
+  remote: git://github.com/ctran/annotate_models.git
+  revision: a43c08f0eb4d69a48c6830630ebb60e35ccb2d2d
+  specs:
+    annotate (2.4.1.beta1)
+
+GIT
+  remote: git://github.com/fxposter/nested_form.git
+  revision: fa902fd355539efe467ef315efa2f69edcbb991e
+  specs:
+    nested_form (0.1.1)
+
+GIT
+  remote: git://github.com/mislav/will_paginate.git
+  revision: a2648e77294806e0e46395e0d3076adf9bee00a0
+  branch: rails3
+  specs:
+    will_paginate (3.0.pre4)
+
+GIT
+  remote: git://github.com/plataformatec/simple_form.git
+  revision: b36a9d2c53012b5da5d00195869906250d790f06
+  specs:
+    simple_form (2.0.0.rc)
+      actionpack (~> 3.0)
+      activemodel (~> 3.0)
+
+GIT
+  remote: git://github.com/zhongqf/rails-footnotes.git
+  revision: 17bb69115e3bace50951b71562b3b92aec6f2320
+  specs:
+    rails-footnotes (3.7.5.rc1)
+      rails (>= 3.0.0)
+
+GIT
+  remote: git://github.com/zhongqf/rails3-generators.git
+  revision: 2a27766e354f7c4be5c1afce7eabcc5a6705ec0b
+  specs:
+    rails3-generators (0.17.4)
+      railties (>= 3.0.0)
+
+GIT
+  remote: git://github.com/zhongqf/show_for.git
+  revision: a9dc63d075b35f87887e967d1497940c8edecfe7
+  specs:
+    show_for (0.2.4)
+
+GIT
   remote: http://github.com/seyhunak/twitter-bootstrap-rails.git
   revision: bda879201e6362d868c913cb5ad8522e5aa2441b
   specs:
@@ -37,9 +84,11 @@ GEM
     activesupport (3.2.1)
       i18n (~> 0.6)
       multi_json (~> 1.0)
+    addressable (2.2.6)
     arel (3.0.0)
     bcrypt-ruby (3.0.1)
     builder (3.0.0)
+    cancan (1.6.7)
     capybara (1.1.2)
       mime-types (>= 1.16)
       nokogiri (>= 1.3.3)
@@ -49,6 +98,9 @@ GEM
       xpath (~> 0.1.4)
     childprocess (0.3.0)
       ffi (~> 1.0.6)
+    chunky_png (1.2.5)
+    cocaine (0.2.1)
+    coderay (1.0.5)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
       railties (~> 3.2.0)
@@ -58,23 +110,57 @@ GEM
     coffee-script-source (1.2.0)
     commonjs (0.2.0)
       therubyracer (~> 0.9.9)
+    compass (0.11.7)
+      chunky_png (~> 1.2)
+      fssm (>= 0.2.7)
+      sass (~> 3.1)
+    database_cleaner (0.7.1)
     devise (2.0.0)
       bcrypt-ruby (~> 3.0)
       orm_adapter (~> 0.0.3)
       railties (~> 3.1)
       warden (~> 1.1)
     diff-lcs (1.1.3)
+    email_spec (1.2.1)
+      mail (~> 2.2)
+      rspec (~> 2.0)
     erubis (2.7.0)
     execjs (1.3.0)
       multi_json (~> 1.0)
+    factory_girl (2.5.1)
+      activesupport
+    factory_girl_rails (1.6.0)
+      factory_girl (~> 2.5.0)
+      railties (>= 3.0.0)
+    faker (1.0.1)
+      i18n (~> 0.4)
     ffi (1.0.11)
+    fssm (0.2.8.1)
+    growl (1.0.3)
+    guard (1.0.0)
+      ffi (>= 0.5.0)
+      thor (~> 0.14.6)
+    guard-bundler (0.1.3)
+      bundler (>= 1.0.0)
+      guard (>= 0.2.2)
+    guard-rspec (0.6.0)
+      guard (>= 0.10.0)
+    guard-spork (0.5.2)
+      guard (>= 0.10.0)
+      spork (>= 0.8.4)
+    has_scope (0.5.1)
     hike (1.2.1)
     i18n (0.6.0)
+    inherited_resources (1.3.0)
+      has_scope (~> 0.5.0)
+      responders (~> 0.6.0)
     journey (1.0.1)
     jquery-rails (2.0.0)
       railties (>= 3.2.0.beta, < 5.0)
       thor (~> 0.14)
     json (1.6.5)
+    launchy (2.0.5)
+      addressable (~> 2.2.6)
     less (2.0.9)
       commonjs (~> 0.2.0)
       therubyracer (~> 0.9.9)
@@ -86,12 +172,24 @@ GEM
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    method_source (0.7.0)
     mime-types (1.17.2)
     multi_json (1.0.4)
     mysql2 (0.3.11)
     nokogiri (1.5.0)
     orm_adapter (0.0.6)
+    paperclip (2.5.2)
+      activerecord (>= 2.3.0)
+      activesupport (>= 2.3.2)
+      cocaine (>= 0.0.2)
+      mime-types
     polyglot (0.3.3)
+    pry (0.9.8.1)
+      coderay (~> 1.0.5)
+      method_source (~> 0.7)
+      slop (>= 2.4.3, < 3)
+    pry-rails (0.1.6)
+      pry
     rack (1.4.1)
     rack-cache (1.1)
       rack (>= 0.4)
@@ -115,8 +213,12 @@ GEM
       rdoc (~> 3.4)
       thor (~> 0.14.6)
     rake (0.9.2.2)
+    rb-fsevent (0.9.0)
+    rdiscount (1.6.8)
     rdoc (3.12)
       json (~> 1.4)
+    responders (0.6.5)
+    rinku (1.5.0)
     rspec (2.8.0)
       rspec-core (~> 2.8.0)
       rspec-expectations (~> 2.8.0)
@@ -141,6 +243,7 @@ GEM
       ffi (~> 1.0.9)
       multi_json (~> 1.0.4)
       rubyzip
+    shoulda-matchers (1.0.0)
     slim (1.1.0)
       temple (~> 0.3.5)
       tilt (~> 1.3.2)
@@ -149,15 +252,22 @@ GEM
       activesupport (~> 3.0)
       railties (~> 3.0)
       slim (~> 1.0)
+    slop (2.4.3)
+    spork (1.0.0rc1)
     sprockets (2.1.2)
       hike (~> 1.2)
       rack (~> 1.0)
       tilt (~> 1.1, != 1.3.0)
+    steak (2.0.0)
+      capybara (>= 1.0.0)
+      rspec-rails (>= 2.5.0)
+    switch_user (0.6.0)
     temple (0.3.5)
     therubyracer (0.9.9)
       libv8 (~> 3.3.10)
     thor (0.14.6)
     tilt (1.3.3)
+    timecop (0.3.5)
     treetop (1.4.10)
       polyglot
       polyglot (>= 0.3.1)
@@ -174,15 +284,45 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  annotate!
+  cancan
   capybara
   coffee-rails (~> 3.2.1)
+  compass
+  database_cleaner
   devise
+  email_spec
+  factory_girl_rails
+  faker
+  growl
+  guard-bundler
+  guard-rspec
+  guard-spork
+  inherited_resources
   jquery-rails
+  launchy
   mysql2
+  nested_form!
+  paperclip
+  pry
+  pry-rails
   rails (= 3.2.1)
+  rails-footnotes!
+  rails3-generators!
+  rb-fsevent
+  rdiscount
+  rinku
   rspec-rails (>= 2.0.1)
   sass-rails (~> 3.2.3)
+  shoulda-matchers
+  show_for!
+  simple_form!
   slim
   slim-rails
+  spork (>= 0.9.0.rc9)
+  steak
+  switch_user
+  timecop
   twitter-bootstrap-rails!
   uglifier (>= 1.0.3)
+  will_paginate!

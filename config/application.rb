@@ -23,6 +23,7 @@ module Plusone
 
     # Custom directories with classes and modules you want to be autoloadable.
     # config.autoload_paths += %W(#{config.root}/extras)
+    config.autoload_paths += %W(#{config.root}/lib)
 
     # Only load the plugins named here, in the order given (default is alphabetical).
     # :all can be used as a placeholder for all plugins not explicitly named.
@@ -61,5 +62,13 @@ module Plusone
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+    
+    config.sass.load_paths << "#{Gem.loaded_specs['compass'].full_gem_path}/frameworks/compass/stylesheets"
+
+    # Comes from devise for not accessing the DB or load models when precompiling your assets.
+    config.assets.initialize_on_precompile = false
+
+    config.less.compress = true
+    
   end
 end

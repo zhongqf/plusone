@@ -1,0 +1,149 @@
+# encoding: UTF-8
+# This file is auto-generated from the current state of the database. Instead
+# of editing this file, please use the migrations feature of Active Record to
+# incrementally modify your database, and then regenerate this schema definition.
+#
+# Note that this schema.rb definition is the authoritative source for your
+# database schema. If you need to create the application database on another
+# system, you should be using db:schema:load, not running all the migrations
+# from scratch. The latter is a flawed and unsustainable approach (the more migrations
+# you'll amass, the slower it'll run and the greater likelihood for issues).
+#
+# It's strongly recommended to check this file into your version control system.
+
+ActiveRecord::Schema.define(:version => 20120205123204) do
+
+  create_table "activities", :force => true do |t|
+    t.integer  "company_id"
+    t.string   "context_type"
+    t.integer  "context_id"
+    t.integer  "user_id"
+    t.string   "action"
+    t.string   "target_type"
+    t.integer  "target_id"
+    t.string   "link_object_type"
+    t.integer  "link_object_id"
+    t.string   "note"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+  end
+
+  create_table "comments", :force => true do |t|
+    t.integer  "commentable_id"
+    t.string   "commentable_type"
+    t.integer  "context_id"
+    t.string   "context_type"
+    t.integer  "user_id"
+    t.text     "body"
+    t.text     "body_html"
+    t.boolean  "is_public",        :default => true, :null => false
+    t.text     "extrainfo"
+    t.datetime "created_at",                         :null => false
+    t.datetime "updated_at",                         :null => false
+  end
+
+  create_table "companies", :force => true do |t|
+    t.string   "name"
+    t.string   "permalink"
+    t.string   "logo_file_name"
+    t.string   "logo_content_type"
+    t.integer  "logo_file_size"
+    t.datetime "logo_updated_at"
+    t.text     "login_instruction"
+    t.string   "default_language"
+    t.string   "default_time_zone"
+    t.text     "description"
+    t.text     "settings"
+    t.string   "domain"
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
+  end
+
+  create_table "contact_items", :force => true do |t|
+    t.integer  "profile_id"
+    t.integer  "contact_type"
+    t.string   "value"
+    t.string   "note"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
+
+  create_table "conversations", :force => true do |t|
+    t.integer  "company_id"
+    t.integer  "user_id"
+    t.string   "context_type"
+    t.integer  "context_id"
+    t.string   "title"
+    t.integer  "comments_count"
+    t.integer  "last_comment_id"
+    t.boolean  "is_public"
+    t.boolean  "is_simple"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
+
+  create_table "groups", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "company_id"
+    t.string   "name"
+    t.string   "permalink"
+    t.boolean  "is_archived"
+    t.boolean  "is_public"
+    t.text     "description"
+    t.text     "settings"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "members", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "group_id"
+    t.integer  "member_type"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "people", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "company_id"
+    t.boolean  "is_employee"
+    t.boolean  "is_admin"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "profiles", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "email"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "name"
+    t.text     "bio"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
+    t.datetime "created_at",          :null => false
+    t.datetime "updated_at",          :null => false
+  end
+
+  create_table "users", :force => true do |t|
+    t.string   "identity"
+    t.string   "email",                  :default => "", :null => false
+    t.string   "encrypted_password",     :default => "", :null => false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          :default => 0
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
+    t.datetime "created_at",                             :null => false
+    t.datetime "updated_at",                             :null => false
+  end
+
+  add_index "users", ["email"], :name => "index_users_on_email", :unique => true
+  add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
+
+end

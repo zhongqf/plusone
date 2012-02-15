@@ -19,20 +19,14 @@
 #  updated_at             :datetime        not null
 #
 
-class User < ActiveRecord::Base
-  # Include default devise modules. Others available are:
-  # :token_authenticatable, :encryptable, :confirmable, :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable, :timeoutable
+# Read about factories at http://github.com/thoughtbot/factory_girl
 
-  # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me
-  
-  has_many :people
-  has_many :members
-  has_many :groups, :through => :members, :source => :group
-  
-  def company
-    people.where(:is_employee => true).first.try(:company)
+FactoryGirl.define do
+  factory :user do
+    identity { FactoryGirl.generate(:identity)}
+    email { FactoryGirl.generate(:email)}
+    password "papapa"
+    password_confirmation "papapa"
   end
 end
+
