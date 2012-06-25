@@ -1,0 +1,52 @@
+header
+  h2
+    = link_to "Eric Zhong", "/ui/me"
+    | &nbsp;
+    = image_tag("triangle.png")
+    | &nbsp;
+    span Edit Profile
+section.main-content.row
+  .span3
+    ul.nav.nav-pills.nav-stacked
+      li.active= link_to "Profile"
+      li= link_to "Account Settings"
+      li= link_to "Notifications"
+  .span9
+    .left-border
+      form.form-horizontal
+        .control-group
+          label.control-label Avatar
+          .controls
+            = image_tag("avatar0.jpeg", :style=>"height: 64px;")
+            | &nbsp;
+            = image_tag("avatar0.jpeg", :style=>"height: 32px;")
+            | &nbsp;
+            = image_tag("avatar0.jpeg", :style=>"height: 24px;")
+            | &nbsp;
+            = link_to "Change Avatar"
+        .control-group
+          label.control-label Phone Number
+          .controls
+            select.input-small
+              option Personal
+              option Work
+            input.input-medium type="text"
+            p.help-block
+              = link_to "Add phone number"
+        .control-group
+          label.control-label Email
+          .controls
+            select.input-small
+              option Work
+              option Home
+            input.input-medium type="text"
+            p.help-block
+              = link_to "Add email"
+        .control-group
+          label.control-label Introduction
+          .controls
+            textarea.input-xlarge
+        .form-actions
+          button.btn.btn-primary type="submit" Save profile
+          | &nbsp;
+          button.btn Cancel

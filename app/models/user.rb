@@ -3,7 +3,6 @@
 # Table name: users
 #
 #  id                     :integer(4)      not null, primary key
-#  company_id             :integer(4)
 #  identity               :string(255)
 #  email                  :string(255)     default(""), not null
 #  encrypted_password     :string(255)     default(""), not null
@@ -15,6 +14,7 @@
 #  last_sign_in_at        :datetime
 #  current_sign_in_ip     :string(255)
 #  last_sign_in_ip        :string(255)
+#  organization_group_id  :integer(4)
 #  created_at             :datetime        not null
 #  updated_at             :datetime        not null
 #
@@ -28,11 +28,9 @@ class User < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me
   
-  has_many :people
   has_many :members
   has_many :groups, :through => :members, :source => :group
-  
-  def company
-    people.where(:is_employee => true).first.try(:company)
-  end
+
+  belongs_to :organization_group, :class_name => "Group"
+
 end

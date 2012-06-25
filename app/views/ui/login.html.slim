@@ -1,0 +1,14 @@
+.login-layout.row
+  .span8
+    = image_tag("loginbk#{rand(2)}.jpg")
+  .span4
+    form.well action="/ui/me"
+      label Username
+      input.span3 type="text"
+      label Password
+      input.span3 type="password"
+      p.help-block= link_to "Forgot Password?"
+      label.checkbox
+        input type="checkbox" Remember me
+      br
+      button.btn type="submit" Login

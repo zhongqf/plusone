@@ -3,10 +3,10 @@
 # Table name: groups
 #
 #  id          :integer(4)      not null, primary key
-#  user_id     :integer(4)
-#  company_id  :integer(4)
+#  creator_id  :integer(4)
+#  manager_id  :integer(4)
+#  type        :string(255)
 #  name        :string(255)
-#  permalink   :string(255)
 #  is_archived :boolean(1)
 #  is_public   :boolean(1)
 #  description :text
@@ -19,10 +19,10 @@
 
 FactoryGirl.define do
   factory :group do
-    user
-    company
+    creator { FactoryGirl.generate(:user)}
+    manager { FactoryGirl.generate(:user)}
     name { FactoryGirl.generate(:name)}
-    permalink { FactoryGirl.generate(:permalink)}
+    type "Group"
     is_archived false
     is_public true
     description "Description here"

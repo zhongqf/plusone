@@ -14,16 +14,13 @@
 ActiveRecord::Schema.define(:version => 20120205123204) do
 
   create_table "activities", :force => true do |t|
-    t.integer  "company_id"
-    t.string   "context_type"
-    t.integer  "context_id"
+    t.integer  "group_id"
     t.integer  "user_id"
     t.string   "action"
     t.string   "target_type"
     t.integer  "target_id"
     t.string   "link_object_type"
     t.integer  "link_object_id"
-    t.string   "note"
     t.datetime "created_at",       :null => false
     t.datetime "updated_at",       :null => false
   end
@@ -31,8 +28,7 @@ ActiveRecord::Schema.define(:version => 20120205123204) do
   create_table "comments", :force => true do |t|
     t.integer  "commentable_id"
     t.string   "commentable_type"
-    t.integer  "context_id"
-    t.string   "context_type"
+    t.integer  "group_id"
     t.integer  "user_id"
     t.text     "body"
     t.text     "body_html"
@@ -40,23 +36,6 @@ ActiveRecord::Schema.define(:version => 20120205123204) do
     t.text     "extrainfo"
     t.datetime "created_at",                         :null => false
     t.datetime "updated_at",                         :null => false
-  end
-
-  create_table "companies", :force => true do |t|
-    t.string   "name"
-    t.string   "permalink"
-    t.string   "logo_file_name"
-    t.string   "logo_content_type"
-    t.integer  "logo_file_size"
-    t.datetime "logo_updated_at"
-    t.text     "login_instruction"
-    t.string   "default_language"
-    t.string   "default_time_zone"
-    t.text     "description"
-    t.text     "settings"
-    t.string   "domain"
-    t.datetime "created_at",        :null => false
-    t.datetime "updated_at",        :null => false
   end
 
   create_table "contact_items", :force => true do |t|
@@ -69,24 +48,24 @@ ActiveRecord::Schema.define(:version => 20120205123204) do
   end
 
   create_table "conversations", :force => true do |t|
-    t.integer  "company_id"
     t.integer  "user_id"
-    t.string   "context_type"
-    t.integer  "context_id"
+    t.integer  "group_id"
     t.string   "title"
+    t.text     "body"
+    t.text     "body_html"
     t.integer  "comments_count"
     t.integer  "last_comment_id"
+    t.boolean  "is_archived"
     t.boolean  "is_public"
-    t.boolean  "is_simple"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
   end
 
   create_table "groups", :force => true do |t|
-    t.integer  "user_id"
-    t.integer  "company_id"
+    t.integer  "creator_id"
+    t.integer  "manager_id"
+    t.string   "type"
     t.string   "name"
-    t.string   "permalink"
     t.boolean  "is_archived"
     t.boolean  "is_public"
     t.text     "description"
@@ -98,18 +77,9 @@ ActiveRecord::Schema.define(:version => 20120205123204) do
   create_table "members", :force => true do |t|
     t.integer  "user_id"
     t.integer  "group_id"
-    t.integer  "member_type"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
-  end
-
-  create_table "people", :force => true do |t|
-    t.integer  "user_id"
-    t.integer  "company_id"
-    t.boolean  "is_employee"
     t.boolean  "is_admin"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "profiles", :force => true do |t|
@@ -139,11 +109,20 @@ ActiveRecord::Schema.define(:version => 20120205123204) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
+    t.integer  "organization_group_id"
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
+
+  create_table "watchings", :force => true do |t|
+    t.integer  "watchable_id"
+    t.string   "watchable_type"
+    t.integer  "user_id"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+  end
 
 end

@@ -3,10 +3,10 @@
 # Table name: groups
 #
 #  id          :integer(4)      not null, primary key
-#  user_id     :integer(4)
-#  company_id  :integer(4)
+#  creator_id  :integer(4)
+#  manager_id  :integer(4)
+#  type        :string(255)
 #  name        :string(255)
-#  permalink   :string(255)
 #  is_archived :boolean(1)
 #  is_public   :boolean(1)
 #  description :text
@@ -16,31 +16,27 @@
 #
 
 class Group < ActiveRecord::Base
-  belongs_to :user
-  belongs_to :company
+  belongs_to :creator, :class_name => "User"
+  belongs_to :manager, :class_name => "User"
   has_many :members
 
   validates_presence_of :name
-  validates_presence_of :permalink
   validates_length_of :name, :within => 3..40
-  validates_length_of :permalink, :within => 3..16
     
   scope :archived, where(:is_archived => true)
   scope :active, where(:is_archived => false)
   scope :public, where(:is_public => true)
   scope :private, where(:is_public => false)
   
-  after_create :log_create
-  
   def archive!
     update_attribute(:is_archived, true)
   end
   
-  def add_member!(user, member_type = Member::TYPES[:participant])
+  def add_member!(user, is_admin = false)
     unless has_member?(user)
       members.create do |member|
         member.user = user
-        member.member_type = member_type
+        member.is_admin = is_admin
       end
     end
   end
@@ -58,15 +54,10 @@ class Group < ActiveRecord::Base
   end
   
   def admin?(user)
-    members.exists?(:user_id => user.id, :member_type => Member::TYPES[:admin])
-  end
-  
-  def owner?(user)
-    self.user == user
+    members.exists?(:user_id => user.id, :is_admin => true)
   end
   
   def log_create
-    company.log_activity(self, "create") if is_public
   end
   
   def log_activity(target, action, user = nil)

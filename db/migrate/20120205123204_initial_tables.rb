@@ -1,26 +1,29 @@
 class InitialTables < ActiveRecord::Migration
   def change
-    create_table :companies do |t|
-      t.string :name
-      t.string :permalink
-      t.string :logo_file_name
-      t.string :logo_content_type
-      t.integer :logo_file_size
-      t.datetime :logo_updated_at
-      t.text :login_instruction
-      t.string :default_language
-      t.string :default_time_zone
-      t.text :description
-      t.text :settings
-      t.string :domain
-      t.timestamps
-    end
+    #create_table :companies do |t|
+    #  t.string :name
+    #  t.string :permalink
+    #  t.string :logo_file_name
+    #  t.string :logo_content_type
+    #  t.integer :logo_file_size
+    #  t.datetime :logo_updated_at
+    #  t.text :login_instruction
+    #  t.string :default_language
+    #  t.string :default_time_zone
+    #  t.text :description
+    #  t.text :settings
+    #  t.string :domain
+    #  t.timestamps
+    #end
     
     create_table :groups do |t|
-      t.integer :user_id
-      t.integer :company_id
+      #t.integer :user_id
+      t.integer :creator_id
+      t.integer :manager_id
+      #t.integer :company_id
+      t.string :type
       t.string :name
-      t.string :permalink
+      #t.string :permalink
       t.boolean :is_archived
       t.boolean :is_public
       t.text :description
@@ -49,6 +52,8 @@ class InitialTables < ActiveRecord::Migration
       t.datetime :last_sign_in_at
       t.string   :current_sign_in_ip
       t.string   :last_sign_in_ip
+
+      t.integer :organization_group_id
       
       ## Encryptable
       # t.string :password_salt
@@ -101,59 +106,75 @@ class InitialTables < ActiveRecord::Migration
       t.timestamps
     end
 
-    create_table :people do |t|
-      t.integer :user_id
-      t.integer :company_id
-      t.boolean :is_employee
-      t.boolean :is_admin
-      
-      t.timestamps
-    end
+    #create_table :people do |t|
+    #  t.integer :user_id
+    #  t.integer :company_id
+    #  t.boolean :is_employee
+    #  t.boolean :is_admin
+    #  
+    #  t.timestamps
+    #end
     
 
     
     create_table :members do |t|
       t.integer :user_id
       t.integer :group_id
-      t.integer :member_type
+      #t.integer :member_type
+      t.boolean :is_admin
       t.timestamps
     end
 
     create_table :activities do |t|
-      t.integer :company_id 
-      t.string :context_type
-      t.integer :context_id
+      #t.integer :company_id 
+      #t.string :context_type
+      #t.integer :context_id
+      t.integer :group_id
       t.integer :user_id
       t.string :action
       t.string :target_type
       t.integer :target_id
       t.string :link_object_type 
       t.integer :link_object_id
-      t.string :note
+      #t.string :note
       t.timestamps
     end
 
     create_table :conversations do |t|
-      t.integer :company_id
+      #t.integer :company_id
       t.integer :user_id
-      t.string :context_type
-      t.integer :context_id
+      #t.string :context_type
+      #t.integer :context_id
+      t.integer :group_id
       t.string :title
+      t.text :body
+      t.text :body_html
+
       
       t.integer :comments_count
       t.integer :last_comment_id
       
+      t.boolean :is_archived
       t.boolean :is_public
-      t.boolean :is_simple
+      #t.boolean :is_simple
       t.timestamps
     end
+
+    create_table :watchings do |t|
+      t.integer :watchable_id
+      t.string :watchable_type
+      t.integer :user_id
+      t.timestamps
+    end
+
 
     
     create_table :comments do |t|
       t.integer :commentable_id
       t.string :commentable_type
-      t.integer :context_id
-      t.string :context_type
+      #t.integer :context_id
+      #t.string :context_type
+      t.integer :group_id
       t.integer :user_id
       t.text :body
       t.text :body_html

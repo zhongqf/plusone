@@ -1,0 +1,7 @@
+- avatar = "avatar#{rand(8)}.jpeg"
+
+.module-item.mi-thin
+  .talk-mini
+    = link_to image_tag(avatar, :class=>"avatar size-smaller") + content_tag(:strong, Faker::Lorem.sentence(1)), "", :class=>"talk-title"
+    .talk-content
+      = Faker::Lorem.paragraph(1)

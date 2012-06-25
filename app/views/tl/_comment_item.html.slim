@@ -1,0 +1,12 @@
+- time = "#{rand(10)} mins ago"
+- avatar = "avatar#{rand(8)}.jpeg"
+- name = Faker::Name.name
+- text = Faker::Lorem.paragraph(1)
+- group = Faker::Company.name
+
+.si-comment-item
+  .sici-content
+    = link_to image_tag(avatar, :class=>"avatar size-small") + content_tag(:strong, name), "", :class=>"sici-user"
+    | : 
+    span.sici-text= text
+    span.sici-time= " - #{time}"

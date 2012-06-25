@@ -1,0 +1,30 @@
+- time = "#{rand(10)} mins ago"
+- avatar = "avatar#{rand(8)}.jpeg"
+- name = Faker::Name.name
+- text = Faker::Lorem.paragraph(1)
+- group = Faker::Name.last_name
+
+div class="module-item stream-item #{comments_expand ? 'comments-expanded' : ''}"
+  .si-content
+    .si-header
+      small.si-group
+        = link_to content_tag(:i, "", :class=>"icon-th-large") + group, "#", :class=>"stream-item-timestamp"
+      = link_to image_tag(avatar, :class=>"avatar") + content_tag(:strong, name), "", :class=>"si-user"
+      span.si-type says:
+    p.si-text= text
+    .si-footer
+      ul.si-time
+        li= link_to time, ""
+      ul.si-actions
+        li.si-action-share= link_to "Share", ""
+        li.si-action-watch= link_to "Watch",""
+        li.si-action-comment= link_to "Comment(4)", ""
+      - if comments_expand
+        .si-comments
+          .si-comment-item.si-ci-new-comment
+            .sici-content
+              = image_tag("avatar2.jpeg", :class=>"avatar size-small")
+              input type="text" placeholder="Enter your comment here"
+          - (2 + rand(7)).times do 
+            = render :partial => "/tl/comment_item" 
+

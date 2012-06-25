@@ -1,0 +1,134 @@
+header
+  h2 
+    | Masterment
+    | &nbsp;
+    = image_tag("watch.png")
+    | &nbsp;
+    = image_tag("unwatch.png")
+nav.page-nav
+  ul.nav.nav-pills
+    li.active
+      a href="#" 
+        i.icon-th-list.icon-white
+
+        | &nbsp;News Feed
+    li
+      a href="#"
+        i.icon-comment
+        | &nbsp;Conversations
+    li
+      a href="#"
+        i.icon-check
+        | &nbsp;Tasks
+    li
+      a href="#"
+        i.icon-calendar
+        | &nbsp;Events
+    li
+      a href="#" 
+        i.icon-file
+        | &nbsp;Files
+    li
+      a href="#"
+        i.icon-info-sign
+        | &nbsp;Info
+    li
+      a href="#"
+        i.icon-lock
+        | &nbsp;Admin
+
+
+.page-content
+  .row
+    .span6
+      .news-feed
+        .feed-group
+          h4 Today
+
+          .feed
+            .avatar.icon
+              = image_tag("avatar0.jpeg")
+            .feed-detail
+              .feed-title
+                #{link_to "Zhong Qinfeng"} started a conversation.
+              .feed-object.feed-conversation
+                =link_to "Let's kick-off the project next week"
+              .feed-content
+                p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+                .comments
+                  .comment
+                    = link_to "Show all 12 comments"
+                  .comment
+                    .avatar.small
+                      = image_tag "avatar1.jpeg"
+                    .comment-content
+                      p #{link_to "Lu Xin"}: OK, do that.
+                  .comment
+                    .avatar.small
+                      = image_tag "avatar2.jpeg"
+                    .comment-content
+                      p #{link_to "Zhang Ziyi"}: Let's start a meetting in 10:00am tomorrow.
+                  .comment
+                    .avatar.small
+                      = image_tag "avatar3.jpeg"
+                    .comment-content
+                      p #{link_to "Qiao Feng"}: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua.
+          .feed
+            .avatar.icon
+              = image_tag("avatar4.jpeg")
+            .feed-detail
+              .feed-title
+                #{link_to "Qiao Feng"} created a task.
+              .feed-object.feed-task
+                = link_to "Project kick-off"
+          .feed
+            .avatar.icon
+              = image_tag("avatar5.jpeg")
+            .feed-detail
+              .feed-title
+                #{link_to "Qian Lingling"} created an event.
+              .feed-object.feed-event
+                = link_to "Kick-off meeting"
+          .feed
+            .avatar.icon
+              = image_tag("avatar2.jpeg")
+            .feed-detail
+              .feed-title
+                #{link_to "Qian Lingling"} says:
+              .feed-content
+                p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit ess
+
+                .comments
+                  .comment
+                    = link_to "Show all 4 comments"
+                  .comment
+                    .avatar.small
+                      = image_tag "avatar7.jpeg"
+                    .comment-content
+                      p #{link_to "Zhang Ziyi"}: Incididunt ut labore et dolore magna aliqua.
+                  .comment
+                    .avatar.small
+                      = image_tag "avatar4.jpeg"
+                    .comment-content
+                      p #{link_to "Yang Chun"}: Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+
+          .feed
+            .avatar.icon
+              = image_tag("avatar6.jpeg")
+            .feed-detail
+              .feed-title
+                #{link_to "Yang Chun"} uploaded some files.
+              .feed-object.feed-file
+                = link_to "Master Schedule"
+              .feed-object.feed-file
+                = link_to "About kick-off"
+          .feed
+            .avatar.icon
+              = image_tag("avatar7.jpeg")
+            .feed-detail
+              .feed-title
+                #{link_to "Zhang Jialei"} joined #{link_to "Masterment"}.
+    .span6
+      h3 Events

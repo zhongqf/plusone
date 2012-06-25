@@ -3,7 +3,6 @@
 # Table name: users
 #
 #  id                     :integer(4)      not null, primary key
-#  company_id             :integer(4)
 #  identity               :string(255)
 #  email                  :string(255)     default(""), not null
 #  encrypted_password     :string(255)     default(""), not null
@@ -15,6 +14,7 @@
 #  last_sign_in_at        :datetime
 #  current_sign_in_ip     :string(255)
 #  last_sign_in_ip        :string(255)
+#  organization_group_id  :integer(4)
 #  created_at             :datetime        not null
 #  updated_at             :datetime        not null
 #

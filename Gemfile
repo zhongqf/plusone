@@ -1,4 +1,4 @@
-source 'http://rubygems.org'
+source 'http://ruby.taobao.org'
 
 gem 'rails', '3.2.1'
 
@@ -6,6 +6,7 @@ gem 'rails', '3.2.1'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'mysql2'
+gem 'unicorn'
 
 
 # Gems used only for assets and not required
@@ -20,13 +21,14 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
   gem "twitter-bootstrap-rails", :git => "http://github.com/seyhunak/twitter-bootstrap-rails.git"
   gem 'compass'
+  gem 'bourbon'
 end
 
 group :test, :development do
   gem 'rails-footnotes', :git => "git://github.com/zhongqf/rails-footnotes.git"
   gem "rails3-generators", :git => "git://github.com/zhongqf/rails3-generators.git"
   gem 'annotate', :git => 'git://github.com/ctran/annotate_models.git'
-  
+  gem 'sextant'
   gem "capybara"
   gem "rspec-rails", ">= 2.0.1"
   gem "pry"

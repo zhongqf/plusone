@@ -1,0 +1,101 @@
+/*
+Syntax error: File to import not found or unreadable: bourbon.
+              Load paths:
+                Compass::SpriteImporter
+                /Users/zhongqf/Cabinet/Development/Projects/plusone/version2/public/stylesheets/sass
+                /Users/zhongqf/Cabinet/Development/Projects/plusone/version2/app/assets/stylesheets
+                /Users/zhongqf/.rvm/gems/ruby-1.9.3-p0@r321/gems/compass-0.11.7/frameworks/blueprint/stylesheets
+                /Users/zhongqf/.rvm/gems/ruby-1.9.3-p0@r321/gems/compass-0.11.7/frameworks/compass/stylesheets
+        on line 154 of /Users/zhongqf/Cabinet/Development/Projects/plusone/version2/app/assets/stylesheets/ui.css.scss
+
+149: //    border-bottom: none;
+150: //  }
+151: //}
+152: 
+153: 
+154: @import "bourbon";
+155: 
+156: 
+157: #topheader {
+158:   margin: 10px 0;
+159:   .logo {
+
+Backtrace:
+/Users/zhongqf/Cabinet/Development/Projects/plusone/version2/app/assets/stylesheets/ui.css.scss:154
+/Users/zhongqf/.rvm/gems/ruby-1.9.3-p0@r321/gems/sass-3.1.13/lib/sass/tree/import_node.rb:64:in `rescue in import'
+/Users/zhongqf/.rvm/gems/ruby-1.9.3-p0@r321/gems/sass-3.1.13/lib/sass/tree/import_node.rb:42:in `import'
+/Users/zhongqf/.rvm/gems/ruby-1.9.3-p0@r321/gems/sass-3.1.13/lib/sass/tree/import_node.rb:25:in `imported_file'
+/Users/zhongqf/.rvm/gems/ruby-1.9.3-p0@r321/gems/sass-3.1.13/lib/sass/tree/visitors/perform.rb:149:in `rescue in visit_import'
+/Users/zhongqf/.rvm/gems/ruby-1.9.3-p0@r321/gems/sass-3.1.13/lib/sass/tree/visitors/perform.rb:154:in `visit_import'
+/Users/zhongqf/.rvm/gems/ruby-1.9.3-p0@r321/gems/sass-3.1.13/lib/sass/tree/visitors/base.rb:37:in `visit'
+/Users/zhongqf/.rvm/gems/ruby-1.9.3-p0@r321/gems/sass-3.1.13/lib/sass/tree/visitors/perform.rb:18:in `visit'
+/Users/zhongqf/.rvm/gems/ruby-1.9.3-p0@r321/gems/sass-3.1.13/lib/sass/tree/visitors/base.rb:53:in `block in visit_children'
+/Users/zhongqf/.rvm/gems/ruby-1.9.3-p0@r321/gems/sass-3.1.13/lib/sass/tree/visitors/base.rb:53:in `map'
+/Users/zhongqf/.rvm/gems/ruby-1.9.3-p0@r321/gems/sass-3.1.13/lib/sass/tree/visitors/base.rb:53:in `visit_children'
+/Users/zhongqf/.rvm/gems/ruby-1.9.3-p0@r321/gems/sass-3.1.13/lib/sass/tree/visitors/perform.rb:27:in `block in visit_children'
+/Users/zhongqf/.rvm/gems/ruby-1.9.3-p0@r321/gems/sass-3.1.13/lib/sass/tree/visitors/perform.rb:39:in `with_environment'
+/Users/zhongqf/.rvm/gems/ruby-1.9.3-p0@r321/gems/sass-3.1.13/lib/sass/tree/visitors/perform.rb:26:in `visit_children'
+/Users/zhongqf/.rvm/gems/ruby-1.9.3-p0@r321/gems/sass-3.1.13/lib/sass/tree/visitors/base.rb:37:in `block in visit'
+/Users/zhongqf/.rvm/gems/ruby-1.9.3-p0@r321/gems/sass-3.1.13/lib/sass/tree/visitors/perform.rb:47:in `visit_root'
+/Users/zhongqf/.rvm/gems/ruby-1.9.3-p0@r321/gems/sass-3.1.13/lib/sass/tree/visitors/base.rb:37:in `visit'
+/Users/zhongqf/.rvm/gems/ruby-1.9.3-p0@r321/gems/sass-3.1.13/lib/sass/tree/visitors/perform.rb:18:in `visit'
+/Users/zhongqf/.rvm/gems/ruby-1.9.3-p0@r321/gems/sass-3.1.13/lib/sass/tree/visitors/perform.rb:7:in `visit'
+/Users/zhongqf/.rvm/gems/ruby-1.9.3-p0@r321/gems/sass-3.1.13/lib/sass/tree/root_node.rb:20:in `render'
+/Users/zhongqf/.rvm/gems/ruby-1.9.3-p0@r321/gems/sass-3.1.13/lib/sass/engine.rb:299:in `_render'
+/Users/zhongqf/.rvm/gems/ruby-1.9.3-p0@r321/gems/sass-3.1.13/lib/sass/engine.rb:247:in `block in render'
+/Users/zhongqf/.rvm/gems/ruby-1.9.3-p0@r321/gems/sass-3.1.13/lib/sass/util.rb:310:in `silence_sass_warnings'
+/Users/zhongqf/.rvm/gems/ruby-1.9.3-p0@r321/gems/sass-3.1.13/lib/sass/engine.rb:247:in `render'
+/Users/zhongqf/.rvm/gems/ruby-1.9.3-p0@r321/gems/sass-3.1.13/lib/sass/plugin/compiler.rb:339:in `update_stylesheet'
+/Users/zhongqf/.rvm/gems/ruby-1.9.3-p0@r321/gems/sass-3.1.13/lib/sass/plugin/compiler.rb:202:in `block in update_stylesheets'
+/Users/zhongqf/.rvm/gems/ruby-1.9.3-p0@r321/gems/sass-3.1.13/lib/sass/plugin/compiler.rb:200:in `each'
+/Users/zhongqf/.rvm/gems/ruby-1.9.3-p0@r321/gems/sass-3.1.13/lib/sass/plugin/compiler.rb:200:in `update_stylesheets'
+/Users/zhongqf/.rvm/gems/ruby-1.9.3-p0@r321/gems/sass-3.1.13/lib/sass/plugin.rb:81:in `update_stylesheets'
+/Users/zhongqf/.rvm/gems/ruby-1.9.3-p0@r321/gems/sass-3.1.13/lib/sass/plugin.rb:54:in `check_for_updates'
+/Users/zhongqf/.rvm/gems/ruby-1.9.3-p0@r321/gems/sass-3.1.13/lib/sass/plugin/rack.rb:51:in `call'
+/Users/zhongqf/.rvm/gems/ruby-1.9.3-p0@r321/gems/warden-1.1.0/lib/warden/manager.rb:35:in `block in call'
+/Users/zhongqf/.rvm/gems/ruby-1.9.3-p0@r321/gems/warden-1.1.0/lib/warden/manager.rb:34:in `catch'
+/Users/zhongqf/.rvm/gems/ruby-1.9.3-p0@r321/gems/warden-1.1.0/lib/warden/manager.rb:34:in `call'
+/Users/zhongqf/.rvm/gems/ruby-1.9.3-p0@r321/gems/actionpack-3.2.1/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+/Users/zhongqf/.rvm/gems/ruby-1.9.3-p0@r321/gems/rack-1.4.1/lib/rack/etag.rb:23:in `call'
+/Users/zhongqf/.rvm/gems/ruby-1.9.3-p0@r321/gems/rack-1.4.1/lib/rack/conditionalget.rb:25:in `call'
+/Users/zhongqf/.rvm/gems/ruby-1.9.3-p0@r321/gems/actionpack-3.2.1/lib/action_dispatch/middleware/head.rb:14:in `call'
+/Users/zhongqf/.rvm/gems/ruby-1.9.3-p0@r321/gems/actionpack-3.2.1/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+/Users/zhongqf/.rvm/gems/ruby-1.9.3-p0@r321/gems/actionpack-3.2.1/lib/action_dispatch/middleware/flash.rb:242:in `call'
+/Users/zhongqf/.rvm/gems/ruby-1.9.3-p0@r321/gems/rack-1.4.1/lib/rack/session/abstract/id.rb:205:in `context'
+/Users/zhongqf/.rvm/gems/ruby-1.9.3-p0@r321/gems/rack-1.4.1/lib/rack/session/abstract/id.rb:200:in `call'
+/Users/zhongqf/.rvm/gems/ruby-1.9.3-p0@r321/gems/actionpack-3.2.1/lib/action_dispatch/middleware/cookies.rb:338:in `call'
+/Users/zhongqf/.rvm/gems/ruby-1.9.3-p0@r321/gems/activerecord-3.2.1/lib/active_record/query_cache.rb:64:in `call'
+/Users/zhongqf/.rvm/gems/ruby-1.9.3-p0@r321/gems/activerecord-3.2.1/lib/active_record/connection_adapters/abstract/connection_pool.rb:443:in `call'
+/Users/zhongqf/.rvm/gems/ruby-1.9.3-p0@r321/gems/actionpack-3.2.1/lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+/Users/zhongqf/.rvm/gems/ruby-1.9.3-p0@r321/gems/activesupport-3.2.1/lib/active_support/callbacks.rb:405:in `_run__3076388542982069335__call__738513777177361932__callbacks'
+/Users/zhongqf/.rvm/gems/ruby-1.9.3-p0@r321/gems/activesupport-3.2.1/lib/active_support/callbacks.rb:405:in `__run_callback'
+/Users/zhongqf/.rvm/gems/ruby-1.9.3-p0@r321/gems/activesupport-3.2.1/lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+/Users/zhongqf/.rvm/gems/ruby-1.9.3-p0@r321/gems/activesupport-3.2.1/lib/active_support/callbacks.rb:81:in `run_callbacks'
+/Users/zhongqf/.rvm/gems/ruby-1.9.3-p0@r321/gems/actionpack-3.2.1/lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+/Users/zhongqf/.rvm/gems/ruby-1.9.3-p0@r321/gems/actionpack-3.2.1/lib/action_dispatch/middleware/reloader.rb:65:in `call'
+/Users/zhongqf/.rvm/gems/ruby-1.9.3-p0@r321/gems/actionpack-3.2.1/lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+/Users/zhongqf/.rvm/gems/ruby-1.9.3-p0@r321/gems/actionpack-3.2.1/lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+/Users/zhongqf/.rvm/gems/ruby-1.9.3-p0@r321/gems/actionpack-3.2.1/lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+/Users/zhongqf/.rvm/gems/ruby-1.9.3-p0@r321/gems/railties-3.2.1/lib/rails/rack/logger.rb:26:in `call_app'
+/Users/zhongqf/.rvm/gems/ruby-1.9.3-p0@r321/gems/railties-3.2.1/lib/rails/rack/logger.rb:16:in `call'
+/Users/zhongqf/.rvm/gems/ruby-1.9.3-p0@r321/gems/actionpack-3.2.1/lib/action_dispatch/middleware/request_id.rb:22:in `call'
+/Users/zhongqf/.rvm/gems/ruby-1.9.3-p0@r321/gems/rack-1.4.1/lib/rack/methodoverride.rb:21:in `call'
+/Users/zhongqf/.rvm/gems/ruby-1.9.3-p0@r321/gems/rack-1.4.1/lib/rack/runtime.rb:17:in `call'
+/Users/zhongqf/.rvm/gems/ruby-1.9.3-p0@r321/gems/activesupport-3.2.1/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+/Users/zhongqf/.rvm/gems/ruby-1.9.3-p0@r321/gems/rack-1.4.1/lib/rack/lock.rb:15:in `call'
+/Users/zhongqf/.rvm/gems/ruby-1.9.3-p0@r321/gems/actionpack-3.2.1/lib/action_dispatch/middleware/static.rb:53:in `call'
+/Users/zhongqf/.rvm/gems/ruby-1.9.3-p0@r321/gems/railties-3.2.1/lib/rails/engine.rb:479:in `call'
+/Users/zhongqf/.rvm/gems/ruby-1.9.3-p0@r321/gems/railties-3.2.1/lib/rails/application.rb:220:in `call'
+/Users/zhongqf/.rvm/gems/ruby-1.9.3-p0@r321/gems/railties-3.2.1/lib/rails/railtie/configurable.rb:30:in `method_missing'
+/Users/zhongqf/.rvm/gems/ruby-1.9.3-p0@r321/gems/unicorn-4.2.0/lib/unicorn/http_server.rb:530:in `process_client'
+/Users/zhongqf/.rvm/gems/ruby-1.9.3-p0@r321/gems/unicorn-4.2.0/lib/unicorn/http_server.rb:604:in `worker_loop'
+/Users/zhongqf/.rvm/gems/ruby-1.9.3-p0@r321/gems/unicorn-4.2.0/lib/unicorn/http_server.rb:487:in `spawn_missing_workers'
+/Users/zhongqf/.rvm/gems/ruby-1.9.3-p0@r321/gems/unicorn-4.2.0/lib/unicorn/http_server.rb:137:in `start'
+/Users/zhongqf/.rvm/gems/ruby-1.9.3-p0@r321/gems/unicorn-4.2.0/bin/unicorn_rails:209:in `<top (required)>'
+/Users/zhongqf/.rvm/gems/ruby-1.9.3-p0@r321/bin/unicorn_rails:19:in `load'
+/Users/zhongqf/.rvm/gems/ruby-1.9.3-p0@r321/bin/unicorn_rails:19:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Syntax error: File to import not found or unreadable: bourbon.\A               Load paths:\A                 Compass::SpriteImporter\A                 /Users/zhongqf/Cabinet/Development/Projects/plusone/version2/public/stylesheets/sass\A                 /Users/zhongqf/Cabinet/Development/Projects/plusone/version2/app/assets/stylesheets\A                 /Users/zhongqf/.rvm/gems/ruby-1.9.3-p0@r321/gems/compass-0.11.7/frameworks/blueprint/stylesheets\A                 /Users/zhongqf/.rvm/gems/ruby-1.9.3-p0@r321/gems/compass-0.11.7/frameworks/compass/stylesheets\A         on line 154 of /Users/zhongqf/Cabinet/Development/Projects/plusone/version2/app/assets/stylesheets/ui.css.scss\A \A 149: //    border-bottom: none;\A 150: //  }\A 151: //}\A 152: \A 153: \A 154: @import \"bourbon\";\A 155: \A 156: \A 157: #topheader {\A 158:   margin: 10px 0;\A 159:   .logo {"; }

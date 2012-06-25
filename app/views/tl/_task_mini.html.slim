@@ -1,0 +1,8 @@
+.module-item.mi-thin
+  .task-mini
+    strong= Faker::Lorem.sentence
+    ul
+      - (2 + rand(3)).times do 
+        li
+          input type="checkbox" = Faker::Lorem.sentence
+

@@ -1,0 +1,68 @@
+div
+  .module
+    .module-item.mi-header.clearfix
+      .mi-header-inner
+        h2= Faker::Name.last_name
+        cite= Faker::Lorem.paragraph(1)
+        .avatar-list
+          =image_tag("avatar1.jpeg", :class=>"avatar size-small")
+          =image_tag("avatar2.jpeg", :class=>"avatar size-small")
+          =image_tag("avatar3.jpeg", :class=>"avatar size-small")
+          =image_tag("avatar4.jpeg", :class=>"avatar size-small")
+          =image_tag("avatar5.jpeg", :class=>"avatar size-small")
+          =image_tag("avatar6.jpeg", :class=>"avatar size-small")
+          =image_tag("avatar7.jpeg", :class=>"avatar size-small")
+        ul.clearfix
+          li= link_to content_tag(:strong, rand(100)) + "discussions"
+          li= link_to content_tag(:strong, rand(50)) + "tasks"
+          li= link_to content_tag(:strong, rand(30)) + "files"
+        ol.clearfix
+          li= link_to "Watch", "", :class=>"btn btn-primary"
+  .content-main
+    .module
+      .module-item
+        h4 Updates
+
+      = render :partial => "/tl/stream_item", :locals => {:comments_expand => false}
+      = render :partial => "/tl/stream_item", :locals => {:comments_expand => false}
+      = render :partial => "/tl/stream_item", :locals => {:comments_expand => true}
+      = render :partial => "/tl/stream_item", :locals => {:comments_expand => false}
+      = render :partial => "/tl/stream_item", :locals => {:comments_expand => false}
+      = render :partial => "/tl/stream_item", :locals => {:comments_expand => false}
+      = render :partial => "/tl/stream_item", :locals => {:comments_expand => false}
+      = render :partial => "/tl/stream_item", :locals => {:comments_expand => false}
+      = render :partial => "/tl/stream_item", :locals => {:comments_expand => false}
+      = render :partial => "/tl/stream_item", :locals => {:comments_expand => false}
+      = render :partial => "/tl/stream_item", :locals => {:comments_expand => false}
+      = render :partial => "/tl/stream_item", :locals => {:comments_expand => false}
+
+
+  .content-side
+
+    .module
+      .module-item.mi-thin
+        strong Discusstions
+      
+      = render :partial => "/tl/talk_mini"
+      = render :partial => "/tl/talk_mini"
+      = render :partial => "/tl/talk_mini"
+      = render :partial => "/tl/talk_mini"
+      = render :partial => "/tl/talk_mini"
+
+    .module
+      .module-item.mi-thin
+        strong Tasks
+      = render :partial => "/tl/task_mini"
+      = render :partial => "/tl/task_mini"
+      = render :partial => "/tl/task_mini"
+
+    /
+      .module
+        .module-item.mi-thin
+          strong Todos
+        = render :partial => "/tl/todo_mini"
+        = render :partial => "/tl/todo_mini"
+        = render :partial => "/tl/todo_mini"
+        = render :partial => "/tl/todo_mini"
+        = render :partial => "/tl/todo_mini"
+

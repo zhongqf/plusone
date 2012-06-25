@@ -1,0 +1,43 @@
+header
+  .avatar= image_tag("avatar1.jpeg")
+  .header_links
+    = link_to "Edit Profile", "/ui/profile_edit", :class=>"btn btn-primary"
+  h2 Eric Zhong
+  small= link_to "zhongqinfeng@wxhx.com"
+section.main-content.row
+  .span7
+    h2 Activities
+  .span5.profile-column
+    .profile-block
+      ul.user-stats
+        li= link_to content_tag(:strong, "8") + content_tag(:span, "teams"), "/ui/user_teams"
+        li= link_to content_tag(:strong, "12") + content_tag(:span, "followers"), "/ui/user_followers"
+    .profile-block
+      dl.user-info
+        dt Name
+        dd Zhong Qinfeng
+        dt Organization
+        dd S2K1
+        dt Phone Number
+        dd
+          ul
+            li
+              span.label Mobile
+              | 137-7119-1869
+            li
+              span.label Work
+              | 5228
+        dt Email
+        dd
+          ul
+            li
+              span.label Personal
+              | pesonal@email.com
+            li
+              span.label Work
+              | workmail@email.com
+        dt Member Since
+        dd 2008/7/1
+        dt Biography
+        dd.fulllength
+          p Vivamus varis ornare diol eget malseulde. Morbi at risu enimaba. Sed maspoalba, laram pappea mollsi baere.

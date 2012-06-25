@@ -1,0 +1,67 @@
+div
+  .module
+    .module-item.mi-header.clearfix
+      = link_to image_tag("avatar8.jpeg", :class=>"avatar size-big"), "", :class=>"profile-piclink"
+      .mi-header-inner
+        h2
+          | Zhong Qinfeng
+          span.small (@finalage)
+        cite
+          span Senior Project Manager
+          span.at at
+          span= link_to "S2K1", ""
+        ul.clearfix
+          li= link_to content_tag(:strong, "12") + "teams"
+          li= link_to content_tag(:strong, "22") + "followers"
+          li= link_to content_tag(:strong, "2,132") + "updates"
+        ol.clearfix
+          li= link_to "Edit my profile", "", :class=>"btn"
+  .content-main
+    .module
+      .module-item
+        h4 Updates
+
+      = render :partial => "/tl/stream_item", :locals => {:comments_expand => false}
+      = render :partial => "/tl/stream_item", :locals => {:comments_expand => false}
+      = render :partial => "/tl/stream_item", :locals => {:comments_expand => false}
+      = render :partial => "/tl/stream_item", :locals => {:comments_expand => false}
+      = render :partial => "/tl/stream_item", :locals => {:comments_expand => false}
+      = render :partial => "/tl/stream_item", :locals => {:comments_expand => true}
+      = render :partial => "/tl/stream_item", :locals => {:comments_expand => false}
+      = render :partial => "/tl/stream_item", :locals => {:comments_expand => false}
+      = render :partial => "/tl/stream_item", :locals => {:comments_expand => false}
+      = render :partial => "/tl/stream_item", :locals => {:comments_expand => false}
+      = render :partial => "/tl/stream_item", :locals => {:comments_expand => false}
+      = render :partial => "/tl/stream_item", :locals => {:comments_expand => false}
+
+  .content-side
+    .module.profile-detail-list
+      .module-item.mi-thin
+        dt Member Since
+        dd 2009/07/01
+      .module-item.mi-thin
+        dt Work Phone
+        dd 5228
+      .module-item.mi-thin
+        dt Mobile Phone
+        dd 123-1234-5678
+      .module-item.mi-thin
+        dt Work Email
+        dd baerer@zerebae.com
+      .module-item.mi-thin
+        dt Personal Email
+        dd uter@hotmail.com
+
+    .module
+      .module-item.mi-thin
+        strong Biography
+      .module-item.mi-thin
+        p= Faker::Lorem.paragraph(3)
+
+    .module
+      .module-item.mi-thin
+        strong Profile
+      .module-item.mi-thin
+        p= Faker::Lorem.paragraph(2)
+
+  
