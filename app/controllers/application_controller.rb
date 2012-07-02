@@ -18,7 +18,11 @@ class ApplicationController < ActionController::Base
 
   protected
     def set_layout
-      devise_controller? ? "login" : "application"
+      case
+      when admin_controller? then "admin"
+      when devise_controller?  then "login"
+      else "application"
+      end
     end
 
 end

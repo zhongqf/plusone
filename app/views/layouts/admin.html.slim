@@ -21,7 +21,7 @@ html lang="en"
     link href="/apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114"
 
   body
-    #doc
+    #doc.admin
       .navbar.navbar-fixed-top
         .navbar-inner
           .container
@@ -29,7 +29,7 @@ html lang="en"
               li.active= link_to content_tag(:i, "", :class=>"icon-home icon-white") + " Home"
               li= link_to content_tag(:i, "", :class=>"icon-th-large icon-white") + " Teams"
               li= link_to content_tag(:i, "", :class=>"icon-map-marker icon-white") + " Browser"
-            
+
             - if user_signed_in?
               ul.nav.pull-right
                 li.dropdown
@@ -40,9 +40,15 @@ html lang="en"
                   ul.dropdown-menu
                     li= link_to "Logout", destroy_user_session_path, :method => :delete
 
-
       #page-outer
         #page-container.container.container-wrapper
-          = yield
+          .main-at-right
+            .content-side
+              = render :partial => "/admin/admin_side"
+            .content-main
+              = yield
 
     = javascript_include_tag "application"
+
+
+

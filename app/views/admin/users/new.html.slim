@@ -1,0 +1,32 @@
+.modal-header
+  button.close type="button" data-dismiss="modal" ×
+  h3 New User
+
+= simple_form_for(@user, :url => registration_path(@user), :html => {:class => 'form-horizontal' }) do |f|
+  .modal-body
+
+    = f.error_notification
+
+    .inputs
+      = f.input :email, :required => true, :autofocus => true
+      = f.input :password, :required => true
+      = f.input :password_confirmation, :required => true
+  
+  .modal-footer
+    .actions
+      = link_to "Close","#", :class=>"btn", :"data-dismiss" => "modal"
+      = f.button :submit, "Create user", :class=>"btn-primary"
+
+coffee:
+  options =
+    success: (data, status, xhr, $form)->
+      content = $(data).find('.inputs').html()
+      
+      if content
+        $form.find('.inputs').html(content)
+      else
+        $('#new_user_modal').modal('hide')
+        $('#users').load('/admin/users #users .wrapper')
+
+  $('#new_user').ajaxForm options
+

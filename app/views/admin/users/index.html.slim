@@ -1,0 +1,11 @@
+#users.module
+  .wrapper
+    .module-item.mi-dark
+      h4 All Users
+      ul.mi-actions.clearfix
+        li= link_to "Add User", new_admin_user_path, :class=>"btn btn-success", :"data-toggle"=>"modal", :"data-modal" =>   "#new_user_modal"
+    - @users.each do |u|
+      .module-item.mi-thin
+        = link_to u.email
+  
+#new_user_modal

@@ -19,7 +19,8 @@ group :assets do
   # gem 'therubyracer'
 
   gem 'uglifier', '>= 1.0.3'
-  gem "twitter-bootstrap-rails", :git => "http://github.com/seyhunak/twitter-bootstrap-rails.git"
+  #gem "twitter-bootstrap-rails", :git => "http://github.com/seyhunak/twitter-bootstrap-rails.git"
+  gem "twitter-bootstrap-rails", "~> 2.1.0"
   gem 'compass'
   gem 'bourbon'
 end
@@ -81,6 +82,7 @@ gem 'simple_form', :git => "git://github.com/plataformatec/simple_form.git"
 gem "will_paginate", :git=>"git://github.com/mislav/will_paginate.git", :branch=>"rails3"
 gem 'paperclip'
 gem 'show_for', :git => "git://github.com/zhongqf/show_for.git"
+gem 'responders'
 gem "inherited_resources"
 gem "nested_form", :git => "git://github.com/fxposter/nested_form.git"
 gem 'rdiscount'

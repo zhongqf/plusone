@@ -1,0 +1,2 @@
+module DeviseExtend::RegistrationsHelper
+end

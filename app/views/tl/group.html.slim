@@ -12,11 +12,11 @@ div
           =image_tag("avatar5.jpeg", :class=>"avatar size-small")
           =image_tag("avatar6.jpeg", :class=>"avatar size-small")
           =image_tag("avatar7.jpeg", :class=>"avatar size-small")
-        ul.clearfix
+        ul.mi-stats.clearfix
           li= link_to content_tag(:strong, rand(100)) + "discussions"
           li= link_to content_tag(:strong, rand(50)) + "tasks"
           li= link_to content_tag(:strong, rand(30)) + "files"
-        ol.clearfix
+        ul.mi-actions.clearfix
           li= link_to "Watch", "", :class=>"btn btn-primary"
   .content-main
     .module

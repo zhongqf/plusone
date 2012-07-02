@@ -12,6 +12,10 @@ ul, ol {
 
 #page-outer {
   background-color: #a6b2ff;
+
+  #doc.admin & {
+    background-color: #ffa6b2;
+  }
 }
 
 .clearfix {
@@ -29,11 +33,19 @@ ul, ol {
 .content-side {
   float: right;
   width: 398px;
+
+  #doc.admin & {
+    width: 278px;
+  }
 }
 
 .content-main {
   float: left;
   width: 500px;
+
+  #doc.admin & {
+    width: 620px;
+  }
 }
 
 .main-at-right {
@@ -83,7 +95,21 @@ ul, ol {
     line-height: 16px;
     border-top: 1px solid #e8e8e8;
     position: relative;
+    
+    ul.mi-actions {
+      list-style: none;
+      position: absolute;
+      right: 12px;
+      top: 12px;
+    }
+    
+    & > ul.mi-actions {
+      top: 7px;
+    }
 
+    &.mi-large {
+      padding: 16px 12px;
+    }
     &.mi-thin {
       padding: 7px 12px;
     }
@@ -92,6 +118,9 @@ ul, ol {
     }
     &.mi-dark, &.mi-dark-hover:hover {
       background-color: whiteSmoke;
+    }
+    &.mi-darker, &.mi-darker-hover:hover {
+      background-color: #f0f0f0;
     }
     &:first-child {
       border-top-left-radius: 5px;
@@ -155,14 +184,9 @@ ul, ol {
       color: #888;
     }
 
-    ol {
-      list-style: none;
-      position: absolute;
-      right: 12px;
-      top: 12px;
-    }
 
-    ul {
+
+    ul.mi-stats {
       position: absolute;
       right: 12px;
       bottom: 12px;
