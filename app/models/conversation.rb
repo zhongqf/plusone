@@ -17,7 +17,7 @@
 #
 
 class Conversation < ActiveRecord::Base
-  has_many :comments, :as => :commentable, :count_cache => true
+  has_many :comments, :as => :commentable
 
   belongs_to :user
   belongs_to :group

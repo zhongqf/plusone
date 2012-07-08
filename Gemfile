@@ -30,17 +30,22 @@ group :test, :development do
   gem "rails3-generators", :git => "git://github.com/zhongqf/rails3-generators.git"
   gem 'annotate', :git => 'git://github.com/ctran/annotate_models.git'
   gem 'sextant'
-  gem "capybara"
-  gem "rspec-rails", ">= 2.0.1"
   gem "pry"
   gem 'pry-rails'
-  gem "steak"
-  gem "factory_girl_rails"
-  gem 'database_cleaner'
   gem "timecop"
   gem "faker"
-  #gem "rcov"
   gem "launchy"
+  gem 'switch_user'
+end
+
+
+group :test do
+  gem "capybara"
+  gem "rspec-rails", ">= 2.0.1"
+  #gem "steak"
+  gem "factory_girl_rails"
+  gem 'database_cleaner'
+  #gem "rcov"
   gem 'spork', '>= 0.9.0.rc9'
   gem 'shoulda-matchers'
   gem 'email_spec'
@@ -51,7 +56,9 @@ group :test, :development do
   gem 'rb-fsevent'
   gem 'growl'
   
-  gem 'switch_user'
+
+  gem 'cucumber-rails'
+  gem 'pickle'
   
 end
 
@@ -79,7 +86,8 @@ gem "slim-rails"
 gem "cancan"
 
 gem 'simple_form', :git => "git://github.com/plataformatec/simple_form.git"
-gem "will_paginate", :git=>"git://github.com/mislav/will_paginate.git", :branch=>"rails3"
+#gem "will_paginate", :git=>"git://github.com/mislav/will_paginate.git", :branch=>"rails3"
+gem "will_paginate", '~> 3.0.0'
 gem 'paperclip'
 gem 'show_for', :git => "git://github.com/zhongqf/show_for.git"
 gem 'responders'
