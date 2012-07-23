@@ -36,6 +36,7 @@ group :test, :development do
   gem "faker"
   gem "launchy"
   gem 'switch_user'
+  gem 'guard-livereload'
 end
 
 
