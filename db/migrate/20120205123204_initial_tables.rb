@@ -33,7 +33,7 @@ class InitialTables < ActiveRecord::Migration
     
     create_table :users do |t|
       t.string :identity
-      #t.boolean :admin, :default => false, :null => false
+      t.boolean :is_admin, :default => false, :null => false
       
       ## Database authenticatable
       t.string :email,              :null => false, :default => ""

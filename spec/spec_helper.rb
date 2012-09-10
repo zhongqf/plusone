@@ -11,8 +11,13 @@ Spork.prefork do
   
   require "rails/application"
   Spork.trap_method(Rails::Application::RoutesReloader, :reload!)
+  Spork.trap_method(Rails::Application, :eager_load!)
+
   
   require File.expand_path("../../config/environment", __FILE__)
+
+  Rails.application.railties.all { |r| r.eager_load! }
+
   require 'rspec/rails'
   require 'shoulda/matchers/integrations/rspec'
 

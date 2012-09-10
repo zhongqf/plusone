@@ -15,17 +15,13 @@
 #  updated_at  :datetime        not null
 #
 
-# Read about factories at http://github.com/thoughtbot/factory_girl
+class Organization < Group
+  before_destroy :check_members
 
-FactoryGirl.define do
-  factory :group do
-    association :creator, factory: :user
-    association :manager, factory: :user
-    name { FactoryGirl.generate(:name)}
-    type "Group"
-    is_archived false
-    is_public true
-    description "Description here"
-    settings nil
-  end
+
+  protected
+    def check_members
+      errors.add :base, "Has members" if members_count > 0
+      errors.blank?
+    end
 end

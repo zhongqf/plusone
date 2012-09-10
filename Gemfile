@@ -7,7 +7,7 @@ gem 'rails', '3.2.1'
 
 gem 'mysql2'
 gem 'unicorn'
-
+gem 'hooves' #rails s unicorn
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -36,6 +36,7 @@ group :test, :development do
   gem "faker"
   gem "launchy"
   gem 'switch_user'
+  gem 'rack-livereload'
   gem 'guard-livereload'
 end
 
@@ -54,11 +55,14 @@ group :test do
   gem 'guard-spork'
   gem "guard-bundler"
   gem "guard-rspec"
+  gem "guard-cucumber"
+  gem 'guard-annotate'
+  gem "guard-rails"
   gem 'rb-fsevent'
   gem 'growl'
   
 
-  gem 'cucumber-rails'
+  gem 'cucumber-rails', :require => false
   gem 'pickle'
   
 end

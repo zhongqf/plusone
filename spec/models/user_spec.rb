@@ -4,6 +4,7 @@
 #
 #  id                     :integer(4)      not null, primary key
 #  identity               :string(255)
+#  is_admin               :boolean(1)      default(FALSE), not null
 #  email                  :string(255)     default(""), not null
 #  encrypted_password     :string(255)     default(""), not null
 #  reset_password_token   :string(255)

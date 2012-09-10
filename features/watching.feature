@@ -4,12 +4,9 @@ Feature: Watching
   I want start watching and end watching groups
   
   Background:
-    Given the following groups exist:
-      | name       |
-      | Green tree |
-    And the following members exist:
-      | group      | user    |
-      | Green tree | Jessica |
+    Given the following members exist:
+      | user_name | group_name |
+      | Jessica   | Green tree |
   
   Scenario: Start watching
     Given I logged in as "Lucy"

@@ -1,0 +1,7 @@
+
+.flash_messages
+  .wrapper
+    - flash.each do |type, message|
+      - unless message.blank?
+        div.alert-message class=type
+          p= message.html_safe

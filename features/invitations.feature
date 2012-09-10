@@ -5,21 +5,24 @@ Feature: Invitations
   
   Background:
     Given the following groups exist:
-      | name       | public |
-      | Green tree | false  |
-    And the following members exist:
-      | user    | group      | is_admin |
-      | Daniel  | Green tree | true     |
-      | Jessica | Green tree | false    |
+      | group | name       | is_public |
+      | tree  | Green tree | false     |
     And the following users exist:
-      | name |
-      | Tom  |
+      | user    | name    |
+      | daniel  | Daniel  |
+      | jessica | Jessica |
+      | tom     | Tom     |
+      | eric    | Eric    |
+    And the following members exist:
+      | user_name | group_name | is_admin |
+      | Daniel    | Green tree | true     |
+      | Jessica   | Green tree | false    |
     And the following invitation exist:
-      | group      | user    | invitee |
-      | Green tree | Jessica | Eric    |
+      | group | user    | invitee |
+      | tree  | jessica | eric    |
     And the following discussion exist:
-      | group      | title             |
-      | Green tree | Sample discussion |
+      | group | title             |
+      | tree  | Sample discussion |
     And I logged in as "Jessica"
     And I go to group page which name: "Green tree"
 

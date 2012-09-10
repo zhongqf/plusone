@@ -14,8 +14,24 @@
 
 FactoryGirl.define do
   factory :member do
-    user
-    group
+    ignore {
+      user_name { FactoryGirl.generate(:name) }
+      group_name { FactoryGirl.generate(:name) }
+    }
+    
+    user nil
+    group nil
     is_admin false
+
+    after(:build) do |member, eva|
+      member.group = Group.find_by_name(eva.group_name) || FactoryGirl.build(:group, :name => eva.group_name)
+
+      if p = Profile.find_by_name(eva.user_name)
+        member.user = p.user
+      else
+        member.user = FactoryGirl.build(:user, :name => eva.user_name)
+      end
+    end
+    
   end
 end

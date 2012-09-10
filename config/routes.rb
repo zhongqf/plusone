@@ -1,4 +1,6 @@
 Plusone::Application.routes.draw do
+  resources :books
+
   devise_for :users, :controllers => { :registrations => "devise_extend/registrations" }
 
   # The priority is based upon order of creation:
@@ -58,6 +60,7 @@ Plusone::Application.routes.draw do
   # Note: This route will make all actions in every controller accessible via GET requests.
   namespace :admin do
     resources :users
+    resources :organizations
   end
   match ':controller(/:action(/:id))(.:format)'
 

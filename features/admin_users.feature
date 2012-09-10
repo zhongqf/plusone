@@ -10,10 +10,10 @@ Feature: Admin users
       | Department |
       | BigDeal    |
     And the following members exist
-      | name | organization |
-      | Andy | Department   |
-      | Eric | Department   |
-      | Jane | BigDeal      |
+      | user_name | group_name   |
+      | Andy      | Department   |
+      | Eric      | Department   |
+      | Jane      | BigDeal      |
     And I go to the admin users page
 
   Scenario: List users

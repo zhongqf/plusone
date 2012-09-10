@@ -41,6 +41,7 @@ html lang="en"
                     li= link_to "Logout", destroy_user_session_path, :method => :delete
 
 
+      = render :partial => "layouts/flashes"
       #page-outer
         #page-container.container.container-wrapper
           = yield

@@ -10,40 +10,39 @@ Feature: Admin organizations
       | Department |
       | BigDeal    |
     And the following members exist
-      | name | organization |
-      | Andy | Department   |
-      | Eric | Department   |
-      | Jane | Department   |
-    And I go to the admin oganizations page
+      | user_name | group_name |
+      | Andy      | Department |
+      | Eric      | Department |
+      | Jane      | Department |
+    And I go to the admin organizations page
   
   Scenario: List organizations
     Then I should see 'Department'
     And I should see 'BigDeal'
 
   Scenario: Create organization
-    When I follow "New Orngaization"
-    And I fill the form with name: "BigBang"
-    And I press "Create Orngaization"
-    Then I should be on admin oganizations page
+    When I follow "New Organization"
+    And I fill in "BigBang" for "Name"
+    And I press "Create Organization"
+    Then I should be on the admin organizations page
     And I should see "BigBang"
 
   Scenario: Update organization
-    When I follow "Edit" within "BigDeal"
+    When I click "Edit" of organization "BigDeal"
     And I fill in "SmallDeal" for "Name"
-    And I press "Update"
-    Then I should be on admin organizations page
+    And I press "Update Organization"
+    Then I should be on the admin organizations page
     And I should see "SmallDeal"
     And I should not see "BigDeal"
 
   Scenario: Delete organization with members
-    When I press "Delete" within "Department"
-    Then I should be on admin organizations page
-    And I should see "failed"
+    When I click "Delete" of organization "Department"
+    Then I should be on the admin organizations page
+    And I should see "could not"
     And organization should exist with name: "Department"
 
   Scenario: Delete blank organization
-    Given no member exist with organization: "BigDeal"
-    When I press "Delete" within "BigDeal"
-    Then I should be on admin organizations page
-    And I should see "successful"
+    When I click "Delete" of organization "BigDeal"
+    Then I should be on the admin organizations page
+    And I should see "successfully"
     And organization should not exist with name: "BigDeal"
