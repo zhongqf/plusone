@@ -3,5 +3,6 @@
   .wrapper
     - flash.each do |type, message|
       - unless message.blank?
-        div.alert-message class=type
-          p= message.html_safe
+        div.alert class="alert-#{type}"
+          button.close type="button" data-dismiss="alert" &times;
+          = message.html_safe

@@ -1,0 +1,87 @@
+#flash_container {
+  position: absolute;
+  top: 40px;
+  left: 50%;
+  z-index: 9999;
+  
+  .flash_messages {
+    text-align: center;
+
+    .wrapper {
+      display:inline-block;
+      margin: 0 0 0 -100%;
+      text-align: left;
+    }
+  }
+}
+
+#mainnav li i {
+  margin-right: 0.5em;
+}
+
+
+#userbox {
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #ccc;
+
+  .info {
+    position: relative;
+    padding: 0 0 0 60px;
+    min-height: 48px;
+
+    img.avatar {
+      position: absolute;
+      top: 0px;
+      left: 0px;
+    }
+
+    a {
+      display: block;
+    }
+  } /* .info */
+
+  ul.stat {
+    margin: 15px 0;
+
+    li {
+      font-size: 21px;
+      padding: 0 10px;
+      border-left: 1px solid #eee;
+
+      &:first-child {
+        padding-left: 0px;
+        border-left: none;
+      }
+    }
+
+    span {
+      font-size: 0.5em;
+      display: block;
+      line-height: 1em;
+    }
+  } /* ul.stat */
+
+  ul.comm {
+    li {
+      padding: 0 4px;
+      position: relative;
+
+      &:first-child {
+        padding-left: 0;
+      }
+    }
+
+    .badge {
+      position: absolute;
+      right: -2px;
+      top: -4px;
+      font-size: 0.8em;
+      padding-left: 6px;
+      padding-right: 6px;
+      background-color: red;
+    }
+  }
+
+
+}

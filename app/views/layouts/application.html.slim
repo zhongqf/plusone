@@ -20,30 +20,117 @@ html lang="en"
     link href="/apple-touch-icon-72x72.png" rel="apple-touch-icon" sizes="72x72"
     link href="/apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114"
 
-  body
-    #doc
-      .navbar.navbar-fixed-top
-        .navbar-inner
-          .container
-            ul.nav
-              li.active= link_to content_tag(:i, "", :class=>"icon-home icon-white") + " Home"
-              li= link_to content_tag(:i, "", :class=>"icon-th-large icon-white") + " Teams"
-              li= link_to content_tag(:i, "", :class=>"icon-map-marker icon-white") + " Browser"
-            
-            - if user_signed_in?
-              ul.nav.pull-right
-                li.dropdown
-                  a href="#" class="dropdown-toggle" data-toggle="dropdown"
-                    = content_tag(:i, "", :class=>"icon-user icon-white")
-                    = current_user.email
-                    b.caret
-                  ul.dropdown-menu
-                    li= link_to "Logout", destroy_user_session_path, :method => :delete
-
-
+  body id="#{page_id}"
+    #page_flashed
       = render :partial => "layouts/flashes"
-      #page-outer
-        #page-container.container.container-wrapper
+
+    .navbar.navbar-fixed-top
+      .navbar-inner
+        .container
+          a.brand href="#" plusone
+
+          ul.nav.pull-right
+            li.divider-vertical
+            li.dropdown
+              a.dropdown-toggle href="#" data-toggle="dropdown"
+                span= image_tag("avatar4.jpeg", :class=>"avatar mini")
+                | finalage
+                b.caret
+              ul.dropdown-menu
+                li.active: a href="#" Profile
+                li: a href="#" Settings
+                li: a href="#" Something else
+                li.divider
+                li: a href="#" Logout
+
+          form.navbar-search.pull-right
+            input.search-query type="text" placeholder="Search everything ..."
+
+    .container
+      .row
+        .span2
+          #userbox
+            .info
+              a href="#"
+                = image_tag("avatar4.jpeg", :class=>"avatar")
+                strong finalage
+              a href="#" S2K1
+            ul.stat.daibwrap
+              li.daib
+                a href="#"
+                  | 12
+                  span groups
+              li.daib
+                a href="#"
+                  | 23
+                  span posts
+              li.daib
+                a href="#"
+                  | 16
+                  span tasks
+            ul.comm.daibwrap
+              li.daib
+                a.btn.btn-small href="#"
+                  i.icon-headphones
+                  span.badge 6
+              li.daib
+                a.btn.btn-small href="#"
+                  i.icon-comments
+              li.daib
+                a.btn.btn-small href="#"
+                  i.icon-bell
+                  span.badge 2
+              li.daib
+                a.btn.btn-small href="#"
+                  i.icon-envelope
+                  span.badge 3
+
+          #mainnav.nav.nav-list
+            li
+              a href="#"
+                i.icon-home
+                | Home
+            li.nav-header Collabration
+            li
+              a href="#"
+                i.icon-comments
+                | Conversations
+            li
+              a href="#"
+                i.icon-tasks
+                | Tasks
+            li
+              a href="#"
+                i.icon-eye-open
+                | Watches
+            li.active
+              a href="#"
+                i.icon-calendar
+                | Calendar
+            li.nav-header Groups
+            li
+              a href="#"
+                i.icon-bookmark
+                | Kengen
+            li
+              a href="#"
+                i.icon-bookmark
+                | G-Kiban
+            li
+              a href="#"
+                i.icon-bookmark
+                | All groups
+            li.nav-header Company
+            li: a href="#" Employees
+            li: a href="#" All groups
+            li.divider
+            li: a href="#" Eric Zhong
+            li: a href="#" How about a lunch...
+
+        .span6
           = yield
+
+        .span
+          = yield(:side)
 
     = javascript_include_tag "application"
